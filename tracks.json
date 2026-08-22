@@ -10,13 +10,23 @@
       "thumb": "bg1.png"
     }
   ],
-  "dawn": [],
+  "dawn": [
+    {
+      "id": 2,
+      "name": "Co2",
+      "artist": "",
+      "album": "",
+      "duration": "",
+      "src": "audio/dawn/Co2.mp3",
+      "thumb": "bg1.png"
+    }
+  ],
   "forest": [],
   "sepia": [],
   "ocean": [],
   "priyanka": [
     {
-      "id": 2,
+      "id": 3,
       "name": "I Think They Call This Love",
       "artist": "",
       "album": "",
@@ -25,7 +35,7 @@
       "thumb": "image.png"
     },
     {
-      "id": 3,
+      "id": 4,
       "name": "Those Eyes",
       "artist": "",
       "album": "",
