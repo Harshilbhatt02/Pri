@@ -26,11 +26,11 @@
 /* ─── THEMES ──────────────────────────────────────── */
 const THEMES = [
   { id: 'midnight', icon: '🌙', label: 'Midnight',    title: 'Ehsaas',   sub: '"Kuch toh hai tujhse raabta..."' },
-  { id: 'dawn',     icon: '🌅', label: 'Golden Dawn', title: 'Ujaala',   sub: '"Naye din ki shuruat ho..."' },
-  { id: 'forest',   icon: '🌿', label: 'Forest Mist', title: 'Sukoon',   sub: '"Jungle mein ek awaaz hai..."' },
-  { id: 'sepia',    icon: '🎞️', label: 'Sepia Film',  title: 'Yaadein',  sub: '"Still searching for you..."' },
-  { id: 'ocean',    icon: '🌊', label: 'Deep Ocean',  title: 'Lehren',   sub: '"Doob jaata hoon main..."' },
-  { id: 'priyanka', icon: '🫶🏻', label: 'Priyanka',   title: 'Priyanka', sub: '"Tu hai toh main hoon..."' },
+  { id: 'dawn',     icon: '🌅', label: 'Golden Dawn', title: 'Ujaala',   sub: '"Naye din ki shuruat..."' },
+  { id: 'forest',   icon: '🌿', label: 'Forest Mist', title: 'Sukoon',   sub: '"Happy mood ke liye happy song..."' },
+  { id: 'sepia',    icon: '🎞️', label: 'Sepia Film',  title: 'Yaadein',  sub: '"Still searching you..."' },
+  { id: 'ocean',    icon: '🌊', label: 'Deep Ocean',  title: 'Lehren',   sub: '"Doob jaata hoon..."' },
+  { id: 'priyanka', icon: '🫶🏻', label: 'Priyanka',   title: 'Priyanka', sub: '"Kuch to hai tujhse raabta..."' },
 ];
 
 /* ─── TRACK DATA (populated from server at startup) ─ */
