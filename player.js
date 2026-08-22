@@ -25,11 +25,11 @@
 
 /* ─── THEMES ──────────────────────────────────────── */
 const THEMES = [
-  { id: 'midnight', icon: '🌙', label: 'Midnight',    title: 'Ehsaas',   sub: '"Kuch toh hai tujhse raabta..."' },
-  { id: 'dawn',     icon: '🌅', label: 'Golden Dawn', title: 'Ujaala',   sub: '"Naye din ki shuruat..."' },
-  { id: 'forest',   icon: '🌿', label: 'Forest Mist', title: 'Sukoon',   sub: '"Happy mood ke liye happy song..."' },
+  { id: 'midnight', icon: '🌙', label: 'Midnight',    title: 'Ehsaas',   sub: '"Love at first sight..."' },
+  { id: 'dawn',     icon: '🌅', label: 'Golden Dawn', title: 'Ujaala',   sub: '"Your need..."' },
+  { id: 'forest',   icon: '🌿', label: 'Forest Mist', title: 'Sukoon',   sub: '"Missing You..."' },
   { id: 'sepia',    icon: '🎞️', label: 'Sepia Film',  title: 'Yaadein',  sub: '"Still searching you..."' },
-  { id: 'ocean',    icon: '🌊', label: 'Deep Ocean',  title: 'Lehren',   sub: '"Doob jaata hoon..."' },
+  { id: 'ocean',    icon: '🌊', label: 'Deep Ocean',  title: 'Lehren',   sub: '"Happy vibe..."' },
   { id: 'priyanka', icon: '🫶🏻', label: 'Priyanka',   title: 'Priyanka', sub: '"Kuch to hai tujhse raabta..."' },
 ];
 
