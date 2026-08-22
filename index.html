@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover"/>
+  <title>Ehsaas — Music Player</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&family=Josefin+Sans:wght@100;200;300;400&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body data-theme="midnight">
+
+  <!-- THEME SWITCHER — top right -->
+  <div class="theme-switcher" id="themeSwitcher">
+    <button class="theme-btn" onclick="cycleTheme()" id="themeToggle">
+      <span id="themeIcon">🌙</span>
+      <span id="themeLabel">Midnight</span>
+      <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+        <polyline points="6 9 12 15 18 9"/>
+      </svg>
+    </button>
+    <div class="theme-dropdown" id="themeDropdown">
+      <div class="t-opt" data-theme="midnight" onclick="setTheme('midnight')">🌙 Midnight</div>
+      <div class="t-opt" data-theme="dawn"     onclick="setTheme('dawn')">🌅 Golden Dawn</div>
+      <div class="t-opt" data-theme="forest"   onclick="setTheme('forest')">🌿 Forest Mist</div>
+      <div class="t-opt" data-theme="sepia"    onclick="setTheme('sepia')">🎞️ Sepia Film</div>
+      <div class="t-opt" data-theme="ocean"    onclick="setTheme('ocean')">🌊 Deep Ocean</div>
+      <div class="t-opt" data-theme="priyanka" onclick="setTheme('priyanka')">🫶🏻 Priyanka</div>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero-bg" id="heroBg"></div>
+    <div class="hero-overlay"></div>
+
+    <!-- Now Playing — centered top -->
+    <div class="np-badge">
+      <span class="pdot"></span>Now Playing
+    </div>
+
+    <!-- Title — small, upper, Josefin/Absans style -->
+    <div class="hero-text">
+      <h1 class="hero-title" id="heroTitle">Ehsaas</h1>
+      <p  class="hero-sub"   id="heroSub">"Kuch toh hai tujhse raabta..."</p>
+    </div>
+
+    <!-- scroll arrow -->
+    <div class="scroll-hint" onclick="document.getElementById('playlistSection').scrollIntoView({behavior:'smooth'})">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <polyline points="6 9 12 15 18 9"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ═══ MINI PLAYER — compact pill, fixed bottom center ═══ -->
+  <div class="mini-player" id="miniPlayer">
+
+    <!-- inner row: disc + info + controls -->
+    <div class="player-inner">
+
+      <!-- spinning disc -->
+      <div class="disc-wrap">
+        <div class="disc" id="albumArt">
+          <img id="albumImg" src="bg1.png" alt="cover"/>
+          <span class="disc-dot"></span>
+        </div>
+      </div>
+
+      <!-- track info -->
+      <div class="player-body">
+        <span class="t-name" id="currentTrackName">Barsaat</span>
+        <div class="t-art-time">
+          <span id="currentArtist">Banjaare, Roni</span>
+          <span class="t-dot">•</span>
+          <span id="timeCur">0:00</span>
+          <span>/</span>
+          <span id="timeTotal">0:00</span>
+        </div>
+      </div>
+
+      <!-- controls -->
+      <div class="ctrl-row">
+        <button class="icon-btn" onclick="toggleLike()" id="likeBtn" title="Like (L)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+          </svg>
+        </button>
+        <button class="icon-btn" onclick="prevTrack()" title="Previous">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M6 6h2v12H6zm3.5 6 8.5 6V6z"/>
+          </svg>
+        </button>
+        <button class="play-btn" onclick="togglePlay()" id="playBtn">
+          <svg viewBox="0 0 24 24" fill="currentColor" id="playIcon">
+            <polygon points="5 3 19 12 5 21 5 3"/>
+          </svg>
+        </button>
+        <button class="icon-btn" onclick="nextTrack()" title="Next">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"/>
+          </svg>
+        </button>
+        <button class="icon-btn" onclick="toggleShuffle()" id="shuffleBtn" title="Shuffle (S)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/>
+            <polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/>
+          </svg>
+        </button>
+        <button class="icon-btn" onclick="toggleRepeat()" id="repeatBtn" title="Repeat (R)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" id="repeatIcon">
+            <polyline points="17 1 21 5 17 9"/>
+            <path d="M3 11V9a4 4 0 0 1 4-4h14"/>
+            <polyline points="7 23 3 19 7 15"/>
+            <path d="M21 13v2a4 4 0 0 1-4 4H3"/>
+          </svg>
+          <span class="repeat-one-badge">1</span>
+        </button>
+        <button class="icon-btn" onclick="toggleMute()" id="muteBtn" title="Mute (M)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" id="muteIcon">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+            <path id="volWave1" d="M19.07 4.93a10 10 0 0 1 0 14.14"/>
+            <path id="volWave2" d="M15.54 8.46a5 5 0 0 1 0 7.07"/>
+          </svg>
+        </button>
+        <input class="vol-slider" id="volSlider" type="range"
+               min="0" max="100" value="80"
+               oninput="setVolume(this.value / 100)"
+               title="Volume"/>
+      </div>
+    </div>
+
+    <!-- progress bar — bottom edge of pill -->
+    <div class="prog-wrap" id="progressBar" onclick="seekTrack(event)">
+      <div class="prog-fill" id="progressFill"></div>
+      <div class="prog-dot"  id="progressDot"></div>
+    </div>
+
+  </div>
+
+  <!-- PLAYLIST -->
+  <section class="pl-section" id="playlistSection">
+    <div class="pl-container">
+
+      <div class="pl-header">
+        <div class="pl-title">
+          <span>🎵</span>
+          <h2>Meri Playlist</h2>
+          <span class="pl-count" id="trackCount">0 songs</span>
+        </div>
+        <div class="pl-actions">
+          <button class="act-btn" onclick="playAll()">▶ Play All</button>
+          <button class="act-btn ghost" onclick="shuffleAll()">⇄ Shuffle</button>
+        </div>
+      </div>
+
+      <div class="track-list" id="trackList"></div>
+
+      <!-- Queue -->
+      <div class="queue-section-outer" id="queueOuter">
+        <div class="queue-hdr" onclick="toggleQueue()" style="cursor:pointer" title="Toggle queue">
+          <span>📋</span><h3>Queue</h3>
+          <span class="q-count" id="queueCount">0</span>
+          <span class="q-chevron" id="queueChevron">▸</span>
+          <button class="q-clear" onclick="event.stopPropagation();clearQueue()">Clear</button>
+        </div>
+        <div class="queue-wrap" id="queueSection">
+          <div id="queueList">
+            <p class="q-empty" id="queueEmpty">Queue khaali hai 😄</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- HTML5 audio engine — sole playback system -->
+  <audio id="audioPlayer" preload="auto"></audio>
+
+  <script src="player.js"></script>
+</body>
+</html>

@@ -1,0 +1,1017 @@
+/* ════════════════════════════════════════════════════
+   EHSAAS — styles.css
+   Josefin Sans = Absans-style display font
+   Nunito       = UI font
+   6 themes     : midnight|dawn|forest|sepia|ocean|priyanka
+════════════════════════════════════════════════════ */
+
+/* ── THEME TOKENS ─────────────────────────────────── */
+[data-theme="midnight"] {
+  --bg:        url('bg1.png');
+  --pl-bg:     linear-gradient(160deg,#0c0c1e 0%,#18183a 55%,#0c0c1e 100%);
+  --ac:        #a78bfa;
+  --ac2:       #7c3aed;
+  --glow:      rgba(167,139,250,.28);
+  --t1:        #f0eeff;
+  --t2:        #9d95c4;
+  --t3:        #4a4368;
+  --glass:     rgba(10,8,24,.82);
+  --gb:        rgba(167,139,250,.14);
+  --card:      rgba(24,20,50,.70);
+  --cardh:     rgba(44,36,82,.84);
+  --carda:     rgba(68,52,120,.80);
+  --player:    rgba(6,4,16,.94);
+  --pb:        rgba(167,139,250,.14);
+  --scr:       #221d4a;
+  --shd:       0 8px 40px rgba(80,55,180,.22);
+}
+[data-theme="dawn"] {
+  --bg:        url('file_000000009b8c8211885b935791beb5d0.png');
+  --pl-bg:     linear-gradient(160deg,#160800 0%,#381500 55%,#160008 100%);
+  --ac:        #fb923c; --ac2: #f59e0b; --glow: rgba(251,146,60,.28);
+  --t1: #fff3e0; --t2: #f4a84e; --t3: #7a5228;
+  --glass: rgba(24,8,0,.82); --gb: rgba(251,146,60,.16);
+  --card: rgba(46,18,4,.70); --cardh: rgba(74,32,7,.84); --carda: rgba(112,48,8,.80);
+  --player: rgba(12,4,0,.94); --pb: rgba(251,146,60,.14);
+  --scr: #4e2200; --shd: 0 8px 40px rgba(200,100,20,.25);
+}
+[data-theme="forest"] {
+  --bg:        url('bg2.png');
+  --pl-bg:     linear-gradient(160deg,#020e07 0%,#081d10 55%,#020e07 100%);
+  --ac:        #34d399; --ac2: #059669; --glow: rgba(52,211,153,.26);
+  --t1: #e0faf0; --t2: #5fcfa0; --t3: #235c3e;
+  --glass: rgba(2,12,6,.82); --gb: rgba(52,211,153,.14);
+  --card: rgba(6,24,13,.70); --cardh: rgba(12,42,22,.84); --carda: rgba(20,65,36,.80);
+  --player: rgba(1,8,4,.94); --pb: rgba(52,211,153,.14);
+  --scr: #0a3018; --shd: 0 8px 40px rgba(15,130,60,.22);
+}
+[data-theme="sepia"] {
+  --bg:        url('file_00000000deb0821188990e7f84273fc0.png');
+  --pl-bg:     linear-gradient(160deg,#100b06 0%,#251806 55%,#100b06 100%);
+  --ac:        #d4a76a; --ac2: #a07840; --glow: rgba(212,167,106,.26);
+  --t1: #f5e8d0; --t2: #bb9560; --t3: #6e5230;
+  --glass: rgba(16,10,4,.82); --gb: rgba(212,167,106,.14);
+  --card: rgba(30,20,8,.70); --cardh: rgba(50,32,14,.84); --carda: rgba(75,50,20,.80);
+  --player: rgba(10,6,2,.94); --pb: rgba(212,167,106,.14);
+  --scr: #42281a; --shd: 0 8px 40px rgba(140,90,30,.22);
+}
+[data-theme="ocean"] {
+  --bg:        url('file_00000000b31482068f7bdaf805988a55.png');
+  --pl-bg:     linear-gradient(160deg,#000816 0%,#001a38 55%,#000816 100%);
+  --ac:        #38bdf8; --ac2: #0284c7; --glow: rgba(56,189,248,.26);
+  --t1: #e0f4ff; --t2: #5bbee8; --t3: #145872;
+  --glass: rgba(0,9,22,.82); --gb: rgba(56,189,248,.14);
+  --card: rgba(0,16,38,.70); --cardh: rgba(0,28,64,.84); --carda: rgba(0,44,90,.80);
+  --player: rgba(0,6,14,.94); --pb: rgba(56,189,248,.14);
+  --scr: #002856; --shd: 0 8px 40px rgba(18,95,165,.24);
+}
+[data-theme="priyanka"] {
+  --bg:        url('image.png');
+  --pl-bg:     linear-gradient(160deg,#1a0a10 0%,#38142a 55%,#1a0a10 100%);
+  --ac:        #f472b6; --ac2: #db2777; --glow: rgba(244,114,182,.30);
+  --t1:        #fff0f6; --t2: #f0a0c8; --t3: #8a4468;
+  --glass:     rgba(26,8,18,.84); --gb: rgba(244,114,182,.18);
+  --card:      rgba(46,14,32,.72); --cardh: rgba(72,22,50,.86); --carda: rgba(108,32,72,.82);
+  --player:    rgba(14,4,10,.95); --pb: rgba(244,114,182,.16);
+  --scr:       #5a1a3a; --shd: 0 8px 40px rgba(220,80,150,.28);
+}
+
+/* ── RESET ────────────────────────────────────────── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Nunito',sans-serif;background:#050510;color:var(--t1);overflow-x:hidden}
+::-webkit-scrollbar{width:5px}
+::-webkit-scrollbar-track{background:transparent}
+::-webkit-scrollbar-thumb{background:var(--scr);border-radius:3px}
+
+/* ── THEME SWITCHER ───────────────────────────────── */
+.theme-switcher{
+  position:fixed;top:16px;right:18px;z-index:1000;
+}
+.theme-btn{
+  display:flex;align-items:center;gap:6px;
+  padding:7px 13px;
+  background:var(--glass);border:1px solid var(--gb);border-radius:50px;
+  color:var(--t1);font-family:'Nunito',sans-serif;font-size:12px;font-weight:700;
+  cursor:pointer;backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+  white-space:nowrap;box-shadow:var(--shd);transition:all .22s;
+}
+.theme-btn:hover{background:var(--cardh);border-color:var(--ac);transform:translateY(-1px)}
+.theme-btn.open .chevron{transform:rotate(180deg)}
+.chevron{width:12px;height:12px;stroke:var(--t2);transition:transform .25s;flex-shrink:0}
+
+.theme-dropdown{
+  position:absolute;top:calc(100% + 6px);right:0;
+  background:var(--glass);border:1px solid var(--gb);border-radius:14px;
+  padding:5px;min-width:165px;
+  backdrop-filter:blur(28px);-webkit-backdrop-filter:blur(28px);box-shadow:var(--shd);
+  opacity:0;transform:translateY(-8px) scale(.96);pointer-events:none;
+  transition:all .2s cubic-bezier(.34,1.56,.64,1);
+}
+.theme-dropdown.open{opacity:1;transform:translateY(0) scale(1);pointer-events:all}
+.t-opt{
+  display:flex;align-items:center;gap:8px;
+  padding:8px 11px;border-radius:9px;
+  font-size:12px;font-weight:700;color:var(--t2);cursor:pointer;transition:all .16s;
+}
+.t-opt:hover{background:var(--cardh);color:var(--t1);transform:translateX(3px)}
+.t-opt.active{background:var(--carda);color:var(--ac)}
+
+/* ── HERO ─────────────────────────────────────────── */
+.hero{
+  position:relative;width:100%;
+  /* 100svh = "small viewport height" — the viewport
+     with browser UI fully shown (address bar visible).
+     This prevents the hero from overflowing on iOS
+     Safari where 100vh includes the hidden address bar.
+     100vh is kept as a fallback for browsers that don't
+     support viewport unit variants (Safari < 15.4).    */
+  height:100vh;
+  height:100svh;
+  display:flex;flex-direction:column;align-items:center;
+  justify-content:flex-start;overflow:hidden;
+}
+.hero-bg{
+  position:absolute;inset:0;
+  background:var(--bg) center/cover no-repeat;
+  transform:scale(1.04);
+  transition:background-image .6s,transform .6s;will-change:transform;
+  filter:brightness(1) saturate(1.05); /* full vivid */
+}
+.hero-overlay{
+  position:absolute;inset:0;
+  /* very light bottom vignette only */
+  background:linear-gradient(to bottom,
+    rgba(0,0,0,.00) 0%,
+    rgba(0,0,0,.00) 42%,
+    rgba(0,0,0,.15) 68%,
+    rgba(0,0,0,.42) 100%);
+}
+
+/* NOW PLAYING pill — centered at top */
+.np-badge{
+  position:relative;z-index:5;
+  display:inline-flex;align-items:center;gap:6px;
+  margin-top:20px;
+  padding:5px 14px;
+  background:var(--glass);border:1px solid var(--gb);border-radius:50px;
+  font-size:9px;font-weight:900;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--ac);
+  backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+  animation:fadeD .6s ease both;
+}
+.pdot{
+  width:5px;height:5px;background:var(--ac);border-radius:50%;
+  animation:pulse 1.4s ease-in-out infinite;
+}
+
+/* Title — small Josefin */
+.hero-text{
+  position:relative;z-index:4;text-align:center;
+  padding:0 24px;margin-top:14px;
+  animation:fadeD .8s .1s ease both;
+}
+.hero-title{
+  font-family:'Josefin Sans',sans-serif;
+  font-size:clamp(1.5rem,4vw,2.6rem);
+  font-weight:200;letter-spacing:.30em;text-transform:uppercase;
+  color:#fff;text-shadow:0 2px 20px rgba(0,0,0,.35);
+  line-height:1.1;margin-bottom:6px;
+}
+.hero-sub{
+  font-family:'Josefin Sans',sans-serif;
+  font-size:clamp(.65rem,1.4vw,.82rem);
+  font-weight:300;font-style:italic;
+  color:rgba(255,255,255,.60);letter-spacing:.10em;
+}
+
+/* ── PRIYANKA theme — title left-aligned, grey ────── */
+[data-theme="priyanka"] .np-badge {
+  position:absolute;
+  left:28px;
+  top:22px;
+  transform:none;
+  margin-top:0;
+}
+[data-theme="priyanka"] .hero-text {
+  position:absolute;
+  left:28px;
+  top:80px;
+  text-align:left;
+  padding:0;
+  margin-top:0;
+}
+[data-theme="priyanka"] .hero-title {
+  color:#6b6b6b;
+  text-shadow:none;
+  /* slightly larger than before — was clamp(1.2rem,3.5vw,2.2rem) */
+  font-size:clamp(1.5rem, 4vw, 2.6rem);
+  letter-spacing:.22em;
+}
+[data-theme="priyanka"] .hero-sub {
+  color:rgba(90,90,90,.85);
+  font-size:clamp(.75rem, 1.6vw, .9rem);
+}
+/* Priyanka hero background — desktop:
+   The image is wide (1456×816). Use cover + centre position
+   so the subject fills the hero nicely.                    */
+[data-theme="priyanka"] .hero-bg {
+  background-image: url('image.png');
+  background-size: cover;
+  background-position: center 18%;  /* keeps face/upper body in frame */
+  background-repeat: no-repeat;
+  background-color: #f0eae8;
+}
+
+/* scroll hint */
+.scroll-hint{
+  position:absolute;bottom:98px;left:50%;
+  transform:translateX(-50%);z-index:4;
+  cursor:pointer;color:rgba(255,255,255,.45);
+  animation:bounce 2s ease-in-out infinite;
+}
+.scroll-hint svg{width:18px;height:18px;display:block}
+
+/* ── MINI PLAYER — exact like reference screenshot ── */
+.mini-player{
+  position:fixed;
+  bottom:28px;
+  left:50%;
+  transform:translateX(-50%);
+  z-index:700;
+
+  display:flex;
+  flex-direction:column;    /* progress bar at very bottom */
+
+  width:min(480px, calc(100vw - 32px));
+
+  background:rgba(30,28,30,.92);
+  border-radius:18px;
+  overflow:hidden;          /* so progress bar clips to corners */
+
+  backdrop-filter:blur(40px);-webkit-backdrop-filter:blur(40px);
+  box-shadow:0 16px 60px rgba(0,0,0,.70),0 0 0 1px rgba(255,255,255,.06);
+  transition:background .35s;
+  animation:riseUp .5s .15s cubic-bezier(.34,1.56,.64,1) both;
+}
+
+/* ── inner content row ── */
+.player-inner{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  padding:10px 14px 10px 10px;
+}
+
+/* ── circular album art ── */
+.disc-wrap{flex-shrink:0}
+.disc{
+  width:48px;height:48px;border-radius:50%;overflow:hidden;
+  flex-shrink:0;position:relative;
+  box-shadow:0 2px 12px rgba(0,0,0,.55);
+  border:none;
+}
+.disc img{width:100%;height:100%;object-fit:cover;display:block}
+.disc-dot{
+  position:absolute;top:50%;left:50%;
+  transform:translate(-50%,-50%);
+  width:8px;height:8px;border-radius:50%;
+  background:rgba(30,28,30,.9);
+  z-index:2;pointer-events:none;
+}
+.disc.spinning{
+  animation-name: spin;
+  animation-duration: 8s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-play-state: running;
+}
+.disc.paused{animation-play-state:paused}
+@keyframes spin{from{transform:rotate(0)}to{transform:rotate(360deg)}}
+
+/* ── track info ── */
+.player-body{flex:1;min-width:0}
+.t-name{
+  display:block;
+  font-size:13.5px;font-weight:800;
+  color:#fff;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+  margin-bottom:2px;
+}
+.t-art-time{
+  display:flex;align-items:center;gap:6px;
+  font-size:11px;font-weight:500;color:rgba(255,255,255,.50);
+  white-space:nowrap;overflow:hidden;
+}
+.t-dot{color:rgba(255,255,255,.25);font-size:8px}
+
+/* ── controls right side ── */
+.ctrl-row{
+  display:flex;align-items:center;gap:4px;flex-shrink:0;
+}
+.icon-btn{
+  background:none;border:none;cursor:pointer;
+  color:rgba(255,255,255,.55);
+  padding:6px;border-radius:50%;
+  transition:all .15s;
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+}
+.icon-btn svg{width:18px;height:18px;display:block}
+.icon-btn:hover{color:#fff;transform:scale(1.12)}
+.icon-btn.active{color:#fff}
+
+/* big white play button — exactly like screenshot */
+.play-btn{
+  width:40px;height:40px;
+  background:#fff;
+  border:none;border-radius:50%;cursor:pointer;
+  color:#111;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 2px 14px rgba(0,0,0,.4);
+  transition:all .18s cubic-bezier(.34,1.56,.64,1);
+  flex-shrink:0;
+}
+.play-btn svg{width:14px;height:14px;display:block;margin-left:2px}
+.play-btn:hover{transform:scale(1.08)}
+.play-btn:active{transform:scale(.94)}
+.play-btn.playing svg{margin-left:0}
+
+.like-btn{color:rgba(255,255,255,.40)}
+.like-btn:hover{color:#f43f5e;background:none}
+.like-btn.liked{color:#f43f5e}
+.like-btn.liked svg{fill:#f43f5e}
+
+/* ── progress bar — absolute bottom of pill ── */
+.prog-wrap{
+  width:100%;
+  height:3px;
+  background:rgba(255,255,255,.10);
+  position:relative;cursor:pointer;
+  flex-shrink:0;
+}
+.prog-wrap:hover{height:5px}
+.prog-fill{
+  height:100%;
+  /* yellow accent like screenshot */
+  background:#f5c518;
+  width:0%;
+  transition:width .12s linear;
+  pointer-events:none;
+  border-radius:0;
+}
+.prog-dot{
+  position:absolute;top:50%;
+  transform:translate(-50%,-50%) scale(0);
+  width:10px;height:10px;background:#fff;border-radius:50%;
+  box-shadow:0 1px 4px rgba(0,0,0,.4);
+  transition:transform .12s;pointer-events:none;
+}
+.prog-wrap:hover .prog-dot{transform:translate(-50%,-50%) scale(1)}
+
+/* hide old rows not used in new layout */
+.info-row,.prog-row{display:none}
+/* vol slider hidden in compact mode, accessible via keyboard */
+.vol-slider{display:none}
+
+/* duplicate .play-btn block removed — canonical rule is above */
+
+/* ── PLAYLIST ─────────────────────────────────────── */
+.pl-section{
+  min-height:100vh;background:var(--pl-bg);
+  padding:52px 0 150px;transition:background .45s;
+}
+.pl-container{max-width:800px;margin:0 auto;padding:0 18px}
+
+.pl-header{
+  display:flex;align-items:center;justify-content:space-between;
+  margin-bottom:22px;flex-wrap:wrap;gap:12px;
+}
+.pl-title{display:flex;align-items:center;gap:9px}
+.pl-title h2{font-size:20px;font-weight:900;color:var(--t1);letter-spacing:-.02em}
+.pl-count{
+  background:var(--card);border:1px solid var(--gb);
+  color:var(--t2);font-size:10px;font-weight:800;padding:2px 9px;border-radius:50px;
+}
+.pl-actions{display:flex;gap:7px}
+.act-btn{
+  padding:7px 15px;border-radius:50px;
+  font-family:'Nunito',sans-serif;font-size:11px;font-weight:800;
+  cursor:pointer;transition:all .2s;border:1px solid transparent;
+  background:var(--ac);color:#fff;box-shadow:0 3px 12px var(--glow);
+}
+.act-btn:hover{transform:translateY(-2px);box-shadow:0 6px 18px var(--glow)}
+.act-btn.ghost{background:var(--card);color:var(--t2);border-color:var(--gb);box-shadow:none}
+.act-btn.ghost:hover{background:var(--cardh);color:var(--t1)}
+
+/* track list */
+.track-list{display:flex;flex-direction:column;gap:6px;margin-bottom:32px}
+.track-item{
+  display:flex;align-items:center;gap:10px;
+  padding:9px 13px;
+  background:var(--card);border:1px solid var(--gb);border-radius:12px;
+  cursor:pointer;transition:all .2s;
+  backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  animation:slideIn .38s ease both;
+}
+.track-item:hover{background:var(--cardh);border-color:var(--ac);transform:translateX(3px);box-shadow:0 3px 18px var(--glow)}
+.track-item.active{background:var(--carda);border-color:var(--ac);box-shadow:0 3px 22px var(--glow)}
+.track-item.active .ti-name{color:var(--ac)}
+
+.ti-num{width:22px;text-align:center;font-size:11px;font-weight:700;color:var(--t3);flex-shrink:0;position:relative}
+.track-item.active .ti-num{color:transparent}
+.track-item.active .ti-num::after{
+  content:'';position:absolute;inset:0;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23a78bfa'%3E%3Crect x='3' y='5' width='3' height='14' rx='1'/%3E%3Crect x='10' y='3' width='3' height='18' rx='1'/%3E%3Crect x='17' y='7' width='3' height='10' rx='1'/%3E%3C/svg%3E") center/14px no-repeat;
+  animation:bars .65s ease-in-out infinite alternate;
+}
+
+.ti-thumb{width:38px;height:38px;border-radius:8px;overflow:hidden;flex-shrink:0;border:1.5px solid var(--gb);transition:border-color .2s}
+.ti-thumb img{width:100%;height:100%;object-fit:cover}
+.track-item.active .ti-thumb{border-color:var(--ac)}
+
+.ti-info{flex:1;min-width:0}
+.ti-name{display:block;font-size:12px;font-weight:800;color:var(--t1);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-bottom:2px;transition:color .2s}
+.ti-artist{display:block;font-size:10px;font-weight:600;color:var(--t2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+
+.ti-badge{
+  display:none;padding:2px 7px;background:var(--glow);border:1px solid var(--ac);
+  border-radius:50px;font-size:8px;font-weight:900;color:var(--ac);flex-shrink:0;
+}
+.track-item.active .ti-badge{display:flex;align-items:center;gap:2px}
+
+.ti-dur{font-size:10px;font-weight:700;color:var(--t3);flex-shrink:0;font-variant-numeric:tabular-nums}
+
+.ti-like{
+  background:none;border:none;cursor:pointer;
+  color:var(--t3);padding:4px;border-radius:50%;transition:all .16s;flex-shrink:0;
+}
+.ti-like svg{width:13px;height:13px;display:block}
+.ti-like:hover{color:#f43f5e;transform:scale(1.2)}
+.ti-like.liked{color:#f43f5e}
+.ti-like.liked svg{fill:#f43f5e}
+
+.ti-add{
+  background:none;border:1.5px solid var(--gb);cursor:pointer;
+  color:var(--t2);width:23px;height:23px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:14px;font-weight:700;transition:all .16s;flex-shrink:0;
+}
+.ti-add:hover{background:var(--ac);border-color:var(--ac);color:#fff;transform:scale(1.1)}
+
+/* queue outer — always visible, contains the clickable header */
+.queue-section-outer{
+  background:var(--card);border:1px solid var(--gb);border-radius:16px;
+  overflow:hidden;
+}
+.queue-hdr{
+  display:flex;align-items:center;gap:8px;
+  padding:14px 16px;
+  user-select:none;
+  transition:background .16s;
+}
+.queue-hdr:hover{background:var(--cardh)}
+.queue-hdr h3{font-size:15px;font-weight:900;color:var(--t1);flex:1}
+.q-chevron{
+  font-size:12px;color:var(--t2);
+  transition:transform .25s;
+  line-height:1;
+}
+/* queue */
+.queue-wrap{
+  max-height:0;opacity:0;overflow:hidden;
+  transition:max-height .45s cubic-bezier(.4,0,.2,1),opacity .28s,padding .28s;
+  padding:0 16px;
+}
+.queue-wrap.open{max-height:500px;opacity:1;padding:0 16px 16px;}
+.q-count{background:var(--ac);color:#fff;font-size:10px;font-weight:900;padding:2px 7px;border-radius:50px}
+.q-clear{
+  background:none;border:1px solid var(--gb);border-radius:50px;
+  color:var(--t3);font-family:'Nunito',sans-serif;font-size:10px;font-weight:800;
+  padding:2px 9px;cursor:pointer;transition:all .16s;
+}
+.q-clear:hover{color:#f43f5e;border-color:#f43f5e}
+.q-empty{font-size:12px;font-weight:600;color:var(--t3);font-style:italic;text-align:center;padding:14px 0}
+.queue-item{
+  display:flex;align-items:center;gap:9px;
+  padding:8px 9px;background:var(--cardh);border-radius:9px;
+  margin-bottom:5px;transition:background .16s;animation:slideIn .28s ease both;
+}
+.queue-item:hover{background:var(--carda)}
+.qi-thumb{width:30px;height:30px;border-radius:6px;overflow:hidden;flex-shrink:0}
+.qi-thumb img{width:100%;height:100%;object-fit:cover}
+.qi-info{flex:1;min-width:0}
+.qi-name{display:block;font-size:11px;font-weight:800;color:var(--t1);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.qi-artist{display:block;font-size:9px;color:var(--t2)}
+.qi-rm{
+  background:none;border:none;cursor:pointer;color:var(--t3);
+  font-size:16px;padding:2px;border-radius:50%;transition:all .16s;line-height:1;flex-shrink:0;
+  /* minimum 32×32 tap target even on desktop         */
+  min-width:32px;min-height:32px;
+  display:flex;align-items:center;justify-content:center;
+}
+.qi-rm:hover{color:#f43f5e;background:rgba(244,63,94,.12);transform:scale(1.1)}
+
+/* ── ANIMATIONS ───────────────────────────────────── */
+@keyframes fadeD  {from{opacity:0;transform:translateY(-12px)}to{opacity:1;transform:translateY(0)}}
+@keyframes riseUp {from{opacity:0;transform:translateX(-50%) translateY(22px)}to{opacity:1;transform:translateX(-50%) translateY(0)}}
+@keyframes slideIn{from{opacity:0;transform:translateX(-10px)}to{opacity:1;transform:translateX(0)}}
+@keyframes bounce {0%,100%{transform:translate(-50%,0)}50%{transform:translate(-50%,7px)}}
+@keyframes pulse  {0%,100%{opacity:1;transform:scale(1)}50%{opacity:.35;transform:scale(.78)}}
+@keyframes bars   {from{transform:scaleY(.55)}to{transform:scaleY(1)}}
+@keyframes bgFade {from{opacity:0;transform:scale(1.04)}to{opacity:1;transform:scale(1)}}
+.hero-bg.fading{animation:bgFade .65s ease forwards}
+
+/* ── PART B: volume slider — visible in ctrl-row ──── */
+.vol-slider{
+  -webkit-appearance:none;
+  width:60px;height:3px;
+  background:rgba(255,255,255,.18);
+  border-radius:2px;outline:none;cursor:pointer;
+  flex-shrink:0;margin-left:2px;
+  /* accent-color follows theme accent */
+  accent-color:#f5c518;
+  vertical-align:middle;
+}
+.vol-slider::-webkit-slider-thumb{
+  -webkit-appearance:none;
+  width:10px;height:10px;border-radius:50%;
+  background:#fff;cursor:pointer;
+  box-shadow:0 1px 4px rgba(0,0,0,.4);
+}
+.vol-slider::-moz-range-thumb{
+  width:10px;height:10px;border-radius:50%;border:none;
+  background:#fff;cursor:pointer;
+}
+
+/* ── PART C: mute button states ───────────────────── */
+#muteBtn.muted{color:rgba(255,255,255,.30)}
+#muteBtn.muted svg{opacity:.45}
+
+/* ── PART D: repeat button states ────────────────── */
+#repeatBtn.active{color:#fff}
+/* repeat-one badge overlay */
+#repeatBtn .repeat-one-badge{
+  display:none;
+  position:absolute;
+  bottom:-1px;right:-1px;
+  width:10px;height:10px;
+  background:var(--ac);
+  border-radius:50%;
+  font-size:6px;font-weight:900;
+  color:#fff;
+  line-height:10px;text-align:center;
+}
+#repeatBtn{position:relative}
+#repeatBtn.repeat-one .repeat-one-badge{display:block}
+
+/* ── PART E: like button states ───────────────────── */
+#likeBtn svg{transition:fill .18s,stroke .18s}
+#likeBtn.liked{color:#f43f5e}
+#likeBtn.liked svg{fill:#f43f5e;stroke:#f43f5e}
+
+/* ── PART A: image fallback — hide broken img icon ── */
+img{background:rgba(255,255,255,.06)}   /* subtle placeholder bg */
+.disc img,.ti-thumb img,.qi-thumb img{
+  /* If image fails to load the element stays but shows
+     a semi-transparent fallback bg — no broken icon   */
+  color:transparent;       /* hides alt text            */
+  object-fit:cover;
+}
+
+/* ════════════════════════════════════════════════════
+   RESPONSIVE — complete breakpoint system
+   Desktop base styles are untouched above.
+   All rules below are additive overrides that only
+   apply at the stated viewport widths.
+
+   Breakpoints:
+     ≤ 991px  — tablet
+     ≤ 767px  — large phone / small tablet
+     ≤ 479px  — phone
+     ≤ 359px  — small phone (320–359px)
+════════════════════════════════════════════════════ */
+
+/* ── 1. Base fixes that apply at ALL sizes ────────
+   These correct structural issues that affect mobile
+   without touching the desktop visual at all.       */
+
+/* hero-sub was clamped too small (0.65rem at 320px).
+   Raise the minimum to keep it legible.             */
+.hero-sub {
+  font-size: clamp(.78rem, 1.8vw, .82rem);
+}
+
+/* Priyanka hero-text needs a max-width so it cannot
+   run into the theme-switcher button on any screen. */
+[data-theme="priyanka"] .hero-text {
+  max-width: calc(100vw - 100px); /* leave room for the switcher */
+}
+
+/* t-art-time: let the artist name shrink/clip first;
+   the time digits are always readable.              */
+.t-art-time {
+  min-width: 0; /* allows the flex children to shrink */
+}
+.t-art-time > span:first-child { /* artist name span */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-width: 0;
+  flex-shrink: 1;
+}
+/* time digits and separators must not shrink away   */
+.t-art-time .t-dot,
+.t-art-time #timeCur,
+.t-art-time #timeTotal,
+.t-art-time > span:not(:first-child) {
+  flex-shrink: 0;
+}
+
+/* ── 2. Tablet  ≤ 991px ───────────────────────────── */
+@media (max-width: 991px) {
+  /* playlist container: slightly narrower safe area  */
+  .pl-container { padding: 0 16px; }
+}
+
+/* Touch screens at any size: disable the horizontal
+   slide transform on track-item hover — on touch the
+   hover state sticks after tap and can cause the row
+   to poke outside the viewport edge.                 */
+@media (pointer: coarse) {
+  .track-item:hover { transform: none; }
+}
+
+/* ── 3. Large phone / small tablet  ≤ 767px ──────── */
+@media (max-width: 767px) {
+
+  /* ── Playlist section ── */
+  .pl-section {
+    padding-top: 40px;
+    /* account for safe-area on modern iPhones        */
+    padding-bottom: calc(120px + env(safe-area-inset-bottom, 0px));
+  }
+
+  .pl-container { padding: 0 14px; }
+
+  /* playlist header: stack title row and actions     */
+  .pl-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+
+  /* track list: tighter gap                          */
+  .track-list { gap: 5px; margin-bottom: 24px; }
+
+  /* hide 'Playing' badge — active row style suffices */
+  .track-item.active .ti-badge { display: none; }
+
+  /* track item: tighten spacing                      */
+  .track-item { gap: 8px; padding: 8px 10px; }
+
+  /* theme switcher label: hide on ≤767px             */
+  .theme-btn span:nth-child(2) { display: none; }
+
+  /* hero sub: larger viewport-relative size          */
+  .hero-sub { font-size: clamp(.78rem, 2.2vw, .82rem); }
+
+  /* Priyanka: keep absolute positions + safe margin  */
+  [data-theme="priyanka"] .np-badge {
+    left: 20px;
+    right: auto;
+    max-width: calc(100vw - 100px);
+  }
+  [data-theme="priyanka"] .hero-text {
+    left: 20px;
+    top: 76px;
+  }
+  /* Priyanka mobile bg: switch to Pri.png on mobile.
+     Pri.png is portrait-optimised so cover + top-centre
+     fills the hero without losing the subject.          */
+  [data-theme="priyanka"] .hero-bg {
+    background-image: url('Pri.png');
+    background-size: cover;
+    background-position: center top;
+  }
+}
+
+/* ── 4. Phone  ≤ 479px ───────────────────────────────
+   The player switches from a single compressed row
+   to a two-row card layout:
+
+   Row 1: [disc] [title / artist+time]   (top, flex-row)
+   Row 2: [prev][play][next][shuf][rep][mute]  (centred)
+   Bar:   [=========progress bar=========]     (bottom)
+
+   This is achieved purely in CSS by making
+   .player-inner wrap and forcing .ctrl-row to
+/* ── 4. Phone  ≤ 479px ───────────────────────────────
+   Compact single-row layout — same structure as the
+   desktop pill, just sized for phone screens.
+──────────────────────────────────────────────────── */
+@media (max-width: 479px) {
+
+  /* ── Player: compact pill ── */
+  .mini-player {
+    width: calc(100vw - 16px);
+    bottom: calc(10px + env(safe-area-inset-bottom, 0px));
+    border-radius: 14px;
+  }
+
+  /* single-row: no wrapping                          */
+  .player-inner {
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 10px 7px 8px;
+  }
+
+  .disc-wrap { flex-shrink: 0; margin-right: 0; }
+  .disc      { width: 38px; height: 38px; }
+  .disc-dot  { width: 6px;  height: 6px;  }
+
+  .player-body { flex: 1; min-width: 0; padding-right: 0; }
+  .t-name     { font-size: 12px; margin-bottom: 1px; }
+  .t-art-time { gap: 3px; font-size: 9.5px; }
+
+  /* ctrl-row: stays inline, right side               */
+  .ctrl-row {
+    width: auto;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 1px;
+    padding: 0;
+  }
+
+  /* compact icon buttons                             */
+  .icon-btn {
+    padding: 0;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+  }
+  .icon-btn svg { width: 15px; height: 15px; }
+
+  .play-btn     { width: 34px; height: 34px; }
+  .play-btn svg { width: 13px; height: 13px; }
+
+  /* hide non-essential buttons to keep the row slim  */
+  .ctrl-row #likeBtn    { display: none; }
+  .ctrl-row #shuffleBtn { display: none; }
+  .ctrl-row #repeatBtn  { display: none; }
+  .ctrl-row #muteBtn    { display: none; }
+
+  .vol-slider { display: none; }
+
+  /* ── Progress bar: tall tap target ── */
+  .prog-wrap {
+    height: 20px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    background: transparent;
+  }
+  .prog-wrap:hover { height: 20px; }
+
+  .prog-wrap::before {
+    content: '';
+    position: absolute;
+    left: 0; right: 0; top: 50%;
+    transform: translateY(-50%);
+    height: 3px;
+    background: rgba(255,255,255,.10);
+    border-radius: 2px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .prog-fill {
+    position: relative; z-index: 1;
+    height: 3px; border-radius: 2px;
+    background: #f5c518;
+    align-self: center; flex-shrink: 0;
+  }
+
+  .prog-dot {
+    z-index: 2; width: 12px; height: 12px;
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  /* ── Playlist ── */
+  .pl-section {
+    padding-top: 32px;
+    padding-bottom: calc(100px + env(safe-area-inset-bottom, 0px));
+  }
+  .pl-container { padding: 0 12px; }
+
+  .ti-num { display: none; }
+  .ti-dur { display: none; }
+  .track-item { gap: 7px; padding: 7px 9px; }
+  .ti-thumb   { width: 38px; height: 38px; }
+  .ti-name    { font-size: 12px; }
+  .ti-artist  { font-size: 9.5px; }
+  .ti-like    { padding: 8px; margin: -4px; }
+  .ti-like svg{ width: 14px; height: 14px; }
+  .ti-add     { width: 30px; height: 30px; font-size: 16px; }
+  .qi-rm      { min-width: 44px; min-height: 44px; }
+
+  /* ── Hero ── */
+  .hero-title { font-size: clamp(1.3rem, 7.5vw, 2rem); letter-spacing: .20em; }
+  .hero-sub   { font-size: clamp(.78rem, 3vw, .82rem); }
+
+  /* scroll hint above the compact player (~60px tall) */
+  .scroll-hint { bottom: calc(76px + env(safe-area-inset-bottom, 0px)); }
+
+  /* Priyanka */
+  [data-theme="priyanka"] .np-badge { left: 14px; top: 16px; }
+  [data-theme="priyanka"] .hero-text {
+    left: 14px;
+    top: 64px;
+    max-width: calc(100vw - 80px);
+  }
+  /* On small phones keep cover + top so Pri.png fills
+     the screen without cropping the subject           */
+  [data-theme="priyanka"] .hero-bg {
+    background-image: url('Pri.png');
+    background-size: cover;
+    background-position: center top;
+  }
+  /* Larger title on mobile for Priyanka             */
+  [data-theme="priyanka"] .hero-title {
+    font-size: clamp(1.6rem, 8vw, 2.2rem);
+    letter-spacing: .18em;
+  }
+  [data-theme="priyanka"] .hero-sub {
+    font-size: clamp(.78rem, 3.2vw, .9rem);
+  }
+
+  /* Queue header */
+  .queue-hdr { padding: 11px 13px; }
+  .queue-hdr h3 { font-size: 13px; }
+}
+
+/* ── 5. Small phone  ≤ 359px ─────────────────────── */
+@media (max-width: 359px) {
+
+  /* Player: tightest possible                        */
+  .mini-player {
+    width: calc(100vw - 8px);
+    border-radius: 13px;
+    bottom: calc(8px + env(safe-area-inset-bottom, 0px));
+  }
+
+  .player-inner {
+    padding: 8px 10px 0 8px;
+  }
+
+  /* Disc: 38px at 320px                              */
+  .disc { width: 38px; height: 38px; }
+  .disc-wrap { margin-right: 8px; }
+
+  /* Track name */
+  .t-name    { font-size: 12px; }
+  .t-art-time{ font-size: 9.5px; gap: 3px; }
+
+  /* Controls row: tighten slightly                   */
+  .ctrl-row {
+    padding: 4px 6px 6px;
+    gap: 0;
+  }
+
+  /* icon buttons: reduce to 38px on 320px screens    */
+  .icon-btn {
+    width: 38px;
+    height: 38px;
+  }
+  .icon-btn svg { width: 16px; height: 16px; }
+
+  /* Play: keep at 44px — it's the primary action     */
+  .play-btn { width: 44px; height: 44px; }
+
+  /* Hide like from player bar — accessible in list   */
+  .ctrl-row .icon-btn:first-child { display: none; }
+  /* Hide mute from player bar at 320px — saves room  */
+  .ctrl-row .icon-btn:last-of-type { display: none; }
+
+  /* Hero ─────────────────────────────────────────── */
+  .hero-title {
+    font-size: clamp(1.1rem, 8vw, 1.6rem);
+    letter-spacing: .15em;
+  }
+
+  /* Playlist ─────────────────────────────────────── */
+  .pl-container { padding: 0 10px; }
+  .track-item   { gap: 6px; padding: 7px 8px; }
+
+  /* Hide queue-add at 320px — queue still accessible
+     via the queue panel                              */
+  .ti-add { display: none; }
+  .ti-like { padding: 3px; margin: 0; }
+  .ti-like svg { width: 12px; height: 12px; }
+
+  /* Queue section ─────────────────────────────────── */
+  .pl-section {
+    padding-bottom: calc(120px + env(safe-area-inset-bottom, 0px));
+  }
+}
+
+/* ── 6. Landscape phones  ≤ 500px tall ───────────────
+   When a phone is rotated to landscape the viewport
+   height drops to ~360–430px. The full-height hero
+   becomes unusably cramped, and the mini-player
+   (which never changes height) covers most of the
+   visible area. Compact the hero and hide the scroll
+   hint so the user lands directly on usable content.
+──────────────────────────────────────────────────── */
+@media (max-height: 500px) and (orientation: landscape) {
+
+  /* Compact hero — show just enough to feel present  */
+  .hero {
+    height: 55vh;
+    min-height: 220px;
+  }
+
+  /* Scroll hint is redundant when hero is short       */
+  .scroll-hint { display: none; }
+
+  /* Hero text: tighter margins                        */
+  .np-badge  { margin-top: 12px; }
+  .hero-text { margin-top: 8px; }
+
+  .hero-title {
+    font-size: clamp(1.1rem, 4vw, 1.8rem);
+    letter-spacing: .18em;
+  }
+  .hero-sub { font-size: .72rem; }
+
+  /* Playlist: less top padding in landscape           */
+  .pl-section { padding-top: 28px; }
+
+  /* Player: use the single-row layout (wider screen)
+     but reduce bottom gap — less wasted space        */
+  .mini-player { bottom: calc(8px + env(safe-area-inset-bottom, 0px)); }
+
+  /* Priyanka landscape: re-anchor the absolute text  */
+  [data-theme="priyanka"] .np-badge { top: 14px; left: 14px; }
+  [data-theme="priyanka"] .hero-text { top: 54px; left: 14px; }
+}
+
+/* ═══════════════════════════════════════════════════
+   LOADING STATE
+   Applied by setLoadingState(true/false) in player.js.
+   .loading on #albumArt  → pulsing ring around the disc
+   .loading on #playBtn   → spinner overlay on the button
+   Both are removed as soon as canplay fires.
+═══════════════════════════════════════════════════ */
+
+/* ── Disc: pulsing ring while buffering ── */
+/* NOTE: .loading only adds the glow ring — it deliberately does NOT
+   re-declare the spin animation so it cannot fight the .spinning /
+   .paused classes that setUIPlaying() manages independently.        */
+#albumArt.loading {
+  box-shadow: 0 0 0 3px rgba(255,255,255,.40);
+  animation-name: spin, loadRing;          /* spin is a no-op if paused */
+  animation-duration: 8s, 1s;
+  animation-timing-function: linear, ease-in-out;
+  animation-iteration-count: infinite, infinite;
+  animation-direction: normal, alternate;
+  animation-play-state: paused, running;   /* ring always pulses; spin follows disc state */
+}
+/* When disc is actively spinning AND loading, let spin run */
+#albumArt.spinning.loading {
+  animation-play-state: running, running;
+}
+@keyframes loadRing {
+  from { box-shadow: 0 0 0 2px rgba(255,255,255,.18); }
+  to   { box-shadow: 0 0 0 5px rgba(255,255,255,.55); }
+}
+
+/* ── Play button: spinner overlay ── */
+#playBtn.loading {
+  position: relative;
+  pointer-events: none;   /* block clicks while loading */
+  opacity: 0.75;
+}
+#playBtn.loading::after {
+  content: '';
+  position: absolute;
+  inset: 4px;
+  border-radius: 50%;
+  border: 2px solid rgba(0,0,0,.15);
+  border-top-color: #111;
+  animation: btnSpin .75s linear infinite;
+}
+@keyframes btnSpin {
+  to { transform: rotate(360deg); }
+}
+
+/* ── Play icon hidden while spinner shows ── */
+#playBtn.loading #playIcon {
+  opacity: 0;
+}

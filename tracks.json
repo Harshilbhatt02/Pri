@@ -1,0 +1,37 @@
+{
+  "midnight": [
+    {
+      "id": 1,
+      "name": "Barsaat",
+      "artist": "",
+      "album": "",
+      "duration": "",
+      "src": "audio/midnight/Barsaat.mp3",
+      "thumb": "bg1.png"
+    }
+  ],
+  "dawn": [],
+  "forest": [],
+  "sepia": [],
+  "ocean": [],
+  "priyanka": [
+    {
+      "id": 2,
+      "name": "I Think They Call This Love",
+      "artist": "",
+      "album": "",
+      "duration": "",
+      "src": "audio/priyanka/I%20Think%20They%20Call%20This%20Love.mp3",
+      "thumb": "image.png"
+    },
+    {
+      "id": 3,
+      "name": "Those Eyes",
+      "artist": "",
+      "album": "",
+      "duration": "",
+      "src": "audio/priyanka/Those%20Eyes.mp3",
+      "thumb": "image.png"
+    }
+  ]
+}
