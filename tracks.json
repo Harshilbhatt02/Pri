@@ -22,11 +22,57 @@
     }
   ],
   "forest": [],
-  "sepia": [],
+  "sepia": [
+    {
+      "id": 3,
+      "name": "Abhi Na Jao Chhod Kar",
+      "artist": "",
+      "album": "",
+      "duration": "",
+      "src": "audio/sepia/Abhi%20Na%20Jao%20Chhod%20Kar.mp3",
+      "thumb": "bg1.png"
+    },
+    {
+      "id": 4,
+      "name": "Dekha Ek Khwab",
+      "artist": "",
+      "album": "",
+      "duration": "",
+      "src": "audio/sepia/Dekha%20Ek%20Khwab.mp3",
+      "thumb": "bg1.png"
+    },
+    {
+      "id": 5,
+      "name": "Ham Tere Pyar Mein",
+      "artist": "",
+      "album": "",
+      "duration": "",
+      "src": "audio/sepia/Ham%20Tere%20Pyar%20Mein.mp3",
+      "thumb": "bg1.png"
+    },
+    {
+      "id": 6,
+      "name": "Itna Na Mujhse Tu Pyar Badha",
+      "artist": "",
+      "album": "",
+      "duration": "",
+      "src": "audio/sepia/Itna%20Na%20Mujhse%20Tu%20Pyar%20Badha.mp3",
+      "thumb": "bg1.png"
+    },
+    {
+      "id": 7,
+      "name": "Kiska Rasta Dekhe",
+      "artist": "",
+      "album": "",
+      "duration": "",
+      "src": "audio/sepia/Kiska%20Rasta%20Dekhe.mp3",
+      "thumb": "bg1.png"
+    }
+  ],
   "ocean": [],
   "priyanka": [
     {
-      "id": 3,
+      "id": 8,
       "name": "I Think They Call This Love",
       "artist": "",
       "album": "",
@@ -35,7 +81,7 @@
       "thumb": "image.png"
     },
     {
-      "id": 4,
+      "id": 9,
       "name": "Those Eyes",
       "artist": "",
       "album": "",
