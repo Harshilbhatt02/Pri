@@ -67,12 +67,30 @@
       "duration": "",
       "src": "audio/sepia/Kiska%20Rasta%20Dekhe.mp3",
       "thumb": "bg1.png"
+    },
+    {
+      "id": 8,
+      "name": "Kya Hua Tera Vada",
+      "artist": "",
+      "album": "",
+      "duration": "",
+      "src": "audio/sepia/Kya%20Hua%20Tera%20Vada.mp3",
+      "thumb": "bg1.png"
+    },
+    {
+      "id": 9,
+      "name": "Mere Rang Mein Rangne Wali",
+      "artist": "",
+      "album": "",
+      "duration": "",
+      "src": "audio/sepia/Mere%20Rang%20Mein%20Rangne%20Wali.mp3",
+      "thumb": "bg1.png"
     }
   ],
   "ocean": [],
   "priyanka": [
     {
-      "id": 8,
+      "id": 10,
       "name": "I Think They Call This Love",
       "artist": "",
       "album": "",
@@ -81,7 +99,7 @@
       "thumb": "image.png"
     },
     {
-      "id": 9,
+      "id": 11,
       "name": "Those Eyes",
       "artist": "",
       "album": "",
