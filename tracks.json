@@ -85,12 +85,48 @@
       "duration": "",
       "src": "audio/sepia/Mere%20Rang%20Mein%20Rangne%20Wali.mp3",
       "thumb": "bg1.png"
+    },
+    {
+      "id": 10,
+      "name": "Neele Neele Ambar Par",
+      "artist": "",
+      "album": "",
+      "duration": "",
+      "src": "audio/sepia/Neele%20Neele%20Ambar%20Par.mp3",
+      "thumb": "bg1.png"
+    },
+    {
+      "id": 11,
+      "name": "O Mere Dil Ke Chain",
+      "artist": "",
+      "album": "",
+      "duration": "",
+      "src": "audio/sepia/O%20Mere%20Dil%20Ke%20Chain.mp3",
+      "thumb": "bg1.png"
+    },
+    {
+      "id": 12,
+      "name": "Pal Pal Dil Ke Paas",
+      "artist": "",
+      "album": "",
+      "duration": "",
+      "src": "audio/sepia/Pal%20Pal%20Dil%20Ke%20Paas.mp3",
+      "thumb": "bg1.png"
+    },
+    {
+      "id": 13,
+      "name": "Tu Tu Hai Wahi",
+      "artist": "",
+      "album": "",
+      "duration": "",
+      "src": "audio/sepia/Tu%20Tu%20Hai%20Wahi.mp3",
+      "thumb": "bg1.png"
     }
   ],
   "ocean": [],
   "priyanka": [
     {
-      "id": 10,
+      "id": 14,
       "name": "I Think They Call This Love",
       "artist": "",
       "album": "",
@@ -99,7 +135,7 @@
       "thumb": "image.png"
     },
     {
-      "id": 11,
+      "id": 15,
       "name": "Those Eyes",
       "artist": "",
       "album": "",
